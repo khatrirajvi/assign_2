@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: meow
+  labels:
+    app: cats
+    component: assign2cat
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cats
+      component: assign2cat
+  template:
+    metadata:
+      labels:
+        app: cats
+        component: assign2cat
+    spec:
+      containers:
+      - image: 686538623883.dkr.ecr.us-east-1.amazonaws.com/assign2:latest
+        name: meow
+        ports:
+        - containerPort: 80
+  

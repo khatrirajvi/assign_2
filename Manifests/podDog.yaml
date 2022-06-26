@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: dogs
+  name: bark
+spec:
+  containers:
+  - image: 686538623883.dkr.ecr.us-east-1.amazonaws.com/assign2dog:latest
+    name: bark
+    ports:
+    - containerPort: 80

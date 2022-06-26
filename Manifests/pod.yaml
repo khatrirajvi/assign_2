@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: cats
+  name: meow
+spec:
+  containers:
+  - image: 686538623883.dkr.ecr.us-east-1.amazonaws.com/assign2:latest
+    name: meow
+    ports:
+    - containerPort: 80

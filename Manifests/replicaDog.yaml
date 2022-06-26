@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: bark
+  labels:
+    app: dogs
+    component: assign2dog
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: dogs
+      component: assign2dog
+  template:
+    metadata:
+      labels:
+        app: dogs
+        component: assign2dog
+    spec:
+      containers:
+      - image: 686538623883.dkr.ecr.us-east-1.amazonaws.com/assign2dog:latest
+        name: bark
+        ports:
+        - containerPort: 80
+  
